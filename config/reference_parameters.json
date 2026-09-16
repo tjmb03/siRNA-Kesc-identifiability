@@ -1,0 +1,40 @@
+{
+  "_comment": [
+    "Illustrative parameters for a GalNAc-like siRNA. They are NOT fitted to any",
+    "real compound and no proprietary data was used. They are chosen to put each",
+    "process on a plausible timescale and to reproduce the 36.7 % protein nadir",
+    "used as the worked example.",
+    "EC50 is calibrated (see run_all.py --calibrate) so that the reference",
+    "simulation hits that nadir; every other value is set by hand."
+  ],
+  "parameters": {
+    "k_el":   2.5,
+    "k_up":   10.0,
+    "k_esc":  0.135135,
+    "k_degt": 1.216216,
+    "k_loss": 0.02,
+    "k_out":  0.344828,
+    "k_syn":  0.344828,
+    "Emax":   0.9,
+    "EC50":   0.080061,
+    "dose":   3.0
+  },
+  "provenance": {
+    "k_el, k_up": "plasma half-life ~1.3 h; 80 % of dose partitions to tissue",
+    "k_esc, k_degt": "tissue pole 0.74 d; 10 % escape fraction (degradation wins)",
+    "k_loss": "RISC-loaded pool decays with a 50 d time constant",
+    "k_out, k_syn": "target protein turnover 2.9 d; k_syn set so baseline = 1",
+    "Emax": "0.9 maximum fractional suppression of synthesis",
+    "EC50": "calibrated to a 36.7 % nadir at the reference dose",
+    "dose": "arbitrary units; the 'reference dose'"
+  },
+  "analysis": {
+    "t_end_days": 180.0,
+    "low_dose_factor": 0.125,
+    "nadir_thresholds": [0.50, 0.70],
+    "k_esc_manifold": {"low": 0.12, "high": 1.80, "n_points": 6},
+    "noise_cv_protein": 0.10,
+    "noise_cv_tissue": 0.15,
+    "seed": 20260915
+  }
+}

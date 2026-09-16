@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+results/run.log
+
+# macOS / archive noise
+.DS_Store
+__MACOSX/
+
+# Uncomment for a purist reproducibility claim: forces every clone to
+# recompute the profile sweeps (~5 min) instead of reading a shipped cache.
+# results/profiles_cache.json
